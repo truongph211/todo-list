@@ -1,0 +1,148 @@
+/* ===== Global ===== */
+body {
+  margin-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #d9f0ff 0%, #f5e8ff 100%);
+  color: #333;
+}
+
+/* ===== Main container ===== */
+.todo-container {
+  width: 420px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 25px;
+  background: #f0f4f8;
+  box-shadow: 12px 12px 30px #c9d2db,
+              -12px -12px 30px #ffffff;
+  border: none;
+}
+
+/* ===== Header ===== */
+#header {
+  margin: 5px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #6c63ff;
+}
+
+h1 {
+  /* Font chữ viết tay mềm mại, rất hợp vibe Gen Z */
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+
+  /* Gradient neon pastel */
+  background: linear-gradient(
+    135deg,
+    #ff6fa1,
+    #ff9fc4,
+    #6c63ff,
+    #4ac6b7
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Hiệu ứng glow nhiều lớp */
+  text-shadow:
+    0 0 8px rgba(67, 64, 105, 0.5),
+    0 0 15px rgba(108,99,255,0.4),
+    0 0 25px rgba(74,198,183,0.4);
+
+  /* Chuyển động gradient */
+  animation: gradientFlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* ===== Input & main button ===== */
+#input-box {
+  width: 65%;
+  padding: 12px 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #f0f4f8;
+  box-shadow: inset 6px 6px 12px #c9d2db,
+              inset -6px -6px 12px #ffffff;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+#input-box:focus {
+  box-shadow: inset 4px 4px 8px #c9d2db,
+              inset -4px -4px 8px #ffffff;
+}
+
+#input-button {
+  padding: 12px 20px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6c63ff, #4ac6b7);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+#input-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* ===== Task list ===== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+  text-align: left;
+}
+
+li {
+  margin: 14px 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f0f4f8;
+  box-shadow: 6px 6px 12px #c9d2db,
+              -6px -6px 12px #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+}
+li:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== Action buttons inside tasks ===== */
+.edit-btn, .delete-btn, .complete-btn {
+  margin-left: 8px;
+  padding: 5px 9px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4ac6b7, #6c63ff);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+.edit-btn:hover, .delete-btn:hover, .complete-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+
+/* ===== Completed task ===== */
+.completed {
+  text-decoration: line-through;
+  color: #7f8c8d;
+  background: #e0e5ec;
+  box-shadow: inset 4px 4px 8px #c9d2db,
+              inset -4px -4px 8px #ffffff;
+}
